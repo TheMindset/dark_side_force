@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class Form extends Component {
   constructor(getFormData) {
@@ -19,6 +19,32 @@ class Form extends Component {
   handleChange = (event) => {
     const { name, value } = event.target
     this.setState({ [name]: value })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    if(!this.state.name) {
+      this.setState({ nameErr: true })
+    } else {
+      this.setState({ nameErr: false })
+    }
+
+    if(!this.state.quote) {
+      this.setState({ quoteErr: true })
+    } else {
+      this.setState({ quoteErr: false })
+    }
+
+    if (this.state.name && this.state.quote) {
+      const user = {
+        name: this.state.name,
+        quote: this.state.quote,
+        rank: this.state.rank
+      }
+      this.props.getFormData(user)
+      this.setState({ isComplete: true })
+    }
   }
 
 
@@ -71,6 +97,11 @@ class Form extends Component {
         <div>
           {rankErr && <p>No Rank</p>}
         </div>
+
+        <Link to='/movies' onClick={this.handleSubmit}>
+          <button type="button"> May the dark force Be With You</button>
+        </Link>
+
       </form>
     )
   }
