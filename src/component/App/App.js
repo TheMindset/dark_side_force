@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss'
+import { Route } from 'react-router-dom'
+
 import { getFilms, getCharacters } from '../api/apiCalls'
 import Container from '../Container/Container'
 
@@ -20,11 +22,11 @@ class App extends Component {
   }
 
   render() {
+    const { movies } = this.state
     return (
       <main className='App'>
         <div>
-          <h1>The Dark Side Force</h1>
-          <Container movies={this.state.movies} />
+          <Route exact path='/movies' render={ () => <Container movies={movies}/> } />
         </div>
       </main>
     )
