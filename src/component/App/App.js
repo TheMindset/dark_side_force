@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import './App.css'
 import { getFilms } from '../api/apiCalls'
-import './App.css';
+import Container from '../Container/Container'
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,7 @@ class App extends Component {
     return (
       <div>
         <h1>The Dark Side Force</h1>
+        <Container movies={this.state.movies} />
       </div>
     )
   }
