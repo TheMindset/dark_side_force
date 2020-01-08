@@ -1,0 +1,13 @@
+$accent-color-dark: rgba(108, 91, 117, 0.8);
+$accent-color-light: rgba(242, 136, 79, 0.8);
+
+* {
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
