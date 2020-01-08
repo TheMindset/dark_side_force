@@ -1,13 +1,18 @@
 $accent-color-dark: rgba(108, 91, 117, 0.8);
 $accent-color-light: rgba(242, 136, 79, 0.8);
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Merriweather', monospace;
   margin: 0;
   padding: 0;
 }
 
 .App {
-  text-align: center;
+  background-attachment: fixed;
+  background: url('../Images/finn_background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120vh;
 }
