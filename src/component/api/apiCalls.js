@@ -99,7 +99,6 @@ const getCharacterFilmsData = (chars) => {
      }
    })
  })
- console.log(filmsData)
  return Promise.all(filmsData)
 }
 

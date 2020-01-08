@@ -21,10 +21,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>The Dark Side Force</h1>
-        <Container movies={this.state.movies} />
-      </div>
+      <main className='App'>
+        <div>
+          <h1>The Dark Side Force</h1>
+          <Container movies={this.state.movies} />
+        </div>
+      </main>
     )
   }
 }
