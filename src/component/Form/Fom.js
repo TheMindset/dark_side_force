@@ -58,7 +58,6 @@ class Form extends Component {
 
     return (
       <form>
-        <label htmlFor="name">Name</label>
         <input 
           autoFocus 
           value={name} 
@@ -71,7 +70,6 @@ class Form extends Component {
           {nameErr && <p>No Name</p>}
         </div>
 
-        <label htmlFor="quote">Your favorite quote</label>
         <input 
           autoFocus 
           value={quote} 
@@ -84,7 +82,6 @@ class Form extends Component {
           {quoteErr && <p>No Quote</p>}
         </div>
 
-        <label htmlFor="rank">Rank</label>
         <select 
           value={rank} 
           name="rank" 

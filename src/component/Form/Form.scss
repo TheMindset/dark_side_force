@@ -1,13 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 50vh;
+
   input {
-    margin: 10px;
-    width: 20%;
-    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  ::placeholder {
+    color: #141d4F;
   }
 
   select {
@@ -31,6 +41,10 @@ form {
   }
 
   .error {
-    outline: 3px solid red;
+    align-self: center;
+    background-color: #1b3c6c;
+    border-radius: 5px;
+    color: red;
+    font-size: 25px;
   }
 }
