@@ -34,9 +34,9 @@ class App extends Component {
     return (
       <main className='App'>
         <div>
+        { <Nav user={userInfos}/> }
           <Route exact path='/' render={() => <Form getFormData={this.getFormData}/>} />  
           <Route exact path='/movies' render={() => <Container movies={movies}/>} />
-          { <Nav user={userInfos}/> }
         </div>
       </main>
     )
