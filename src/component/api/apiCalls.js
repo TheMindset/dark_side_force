@@ -36,6 +36,7 @@ export const getCharacters = (id) => {
   .then(data => data.characters)
   .then(data => cleanCharacterData(data))
   .then(chars => getCharacterHoweworldData(chars))
+  .then(chars => getCharacterSpeciesData(chars))
 }
 
 const getCharacterHoweworldData = (chars) => {
@@ -55,6 +56,26 @@ const getCharacterHoweworldData = (chars) => {
       }
     })
   })
+  return Promise.all(homeworldData)
+}
+
+const getCharacterSpeciesData = (chars) => {
+  const speciciesData = chars.map(char => {
+    return fetch(chars.species)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}, please retry`)
+      }
+      return response.json()
+    })
+    .then(specie => {
+      return {
+        ...char,
+        name: specie.name,
+      }
+    })
+  })
+  return Promise.all(speciciesData)
 }
 
 const cleanCharacterData = (characterUrls) => {
