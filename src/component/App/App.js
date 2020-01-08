@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css'
-import { getFilms } from '../api/apiCalls'
+import { getFilms, getCharacters } from '../api/apiCalls'
 import Container from '../Container/Container'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
+      characters: [],
       movies: []
     }
   }
@@ -14,6 +15,8 @@ class App extends Component {
   componentDidMount() {
     getFilms()
     .then(data => this.setState({ movies: data }))
+    getCharacters(1)
+    .then(data => this.setState({ characters: data}))
   }
 
   render() {

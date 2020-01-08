@@ -35,11 +35,12 @@ export const getCharacters = (id) => {
   })
   .then(data => data.characters)
   .then(data => cleanCharacterData(data))
-  .then(chars => getCharacterHoweworldData(chars))
+  .then(chars => getCharacterHomeworldData(chars))
   .then(chars => getCharacterSpeciesData(chars))
+  .then(chars => getCharacterFilmsData(chars))
 }
 
-const getCharacterHoweworldData = (chars) => {
+const getCharacterHomeworldData = (chars) => {
   const homeworldData = chars.map(char => {
     return fetch(char.homeworld)
     .then(response => {
@@ -61,7 +62,7 @@ const getCharacterHoweworldData = (chars) => {
 
 const getCharacterSpeciesData = (chars) => {
   const speciciesData = chars.map(char => {
-    return fetch(chars.species)
+    return fetch(char.species)
     .then(response => {
       if (!response.ok) {
         throw new Error(`Error: ${response.status}, please retry`)
@@ -71,11 +72,35 @@ const getCharacterSpeciesData = (chars) => {
     .then(specie => {
       return {
         ...char,
-        name: specie.name,
+        name: specie.name
       }
     })
   })
   return Promise.all(speciciesData)
+}
+
+const getCharacterFilmsData = (chars) => {
+ const filmsData = chars.map(char => {
+   const filmsName = char.films.map(film => {
+     return fetch(film)
+     .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}, please retry`)
+      }
+      return response.json()
+    })
+    .then(film => film.title)
+   })
+   return Promise.all(filmsName)
+   .then(namesOfFilms => {
+     return {
+       ...char,
+       films: namesOfFilms
+     }
+   })
+ })
+ console.log(filmsData)
+ return Promise.all(filmsData)
 }
 
 const cleanCharacterData = (characterUrls) => {
