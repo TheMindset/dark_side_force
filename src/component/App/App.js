@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom'
 import { getFilms, getCharacters } from '../api/apiCalls'
 import Container from '../Container/Container'
 import Form from '../Form/Fom';
+import Nav from '../Nav/Nav'
 
 class App extends Component {
   constructor() {
@@ -29,12 +30,13 @@ class App extends Component {
   }
 
   render() {
-    const { movies } = this.state
+    const { movies, userInfos } = this.state
     return (
       <main className='App'>
         <div>
           <Route exact path='/' render={() => <Form getFormData={this.getFormData}/>} />  
           <Route exact path='/movies' render={() => <Container movies={movies}/>} />
+          { <Nav user={userInfos}/> }
         </div>
       </main>
     )
