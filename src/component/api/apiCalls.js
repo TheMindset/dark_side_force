@@ -21,8 +21,7 @@ const sortFilmsByEpisode = (allFilms) => {
       releaseYear: film.release_date.slice(0, 4)
     }
   })
-} 
-
+}
 
 export const getCharacters = (id) => {
   const url = `https://swapi.co/api/films/${id}`
@@ -36,9 +35,27 @@ export const getCharacters = (id) => {
   })
   .then(data => data.characters)
   .then(data => cleanCharacterData(data))
-  .then()
+  .then(chars => getCharacterHoweworldData(chars))
 }
 
+const getCharacterHoweworldData = (chars) => {
+  const homeworldData = chars.map(char => {
+    return fetch(char.homeworld)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}, please retry`)
+      }
+      return response.json()
+    })
+    .then(homeworld => {
+      return {
+        ...char,
+        name: homeworld.name,
+        population: homeworld.population
+      }
+    })
+  })
+}
 
 const cleanCharacterData = (characterUrls) => {
   const characterData = characterUrls.map(charUrl => {
