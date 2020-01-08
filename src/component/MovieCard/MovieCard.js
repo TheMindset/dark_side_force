@@ -13,3 +13,7 @@ const MovieCard = ({ movie }) => {
 }
 
 export default MovieCard
+
+MovieCard.propTypes = {
+  movie: PropTypes.object.isRequired
+}

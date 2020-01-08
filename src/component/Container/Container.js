@@ -13,3 +13,7 @@ const Container = ({ movies }) => {
 }
 
 export default Container
+
+Container.propTypes = {
+  movies: PropTypes.array.isRequired
+}
