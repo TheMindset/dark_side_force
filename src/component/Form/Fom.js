@@ -10,10 +10,11 @@ class Form extends Component {
     this.state = {
       name: '',
       quote: '',
-      rank: '',
+      rank: 'Padawan',
       nameErr: '',
       quoteErr: '',
-      rankErr: false
+      rankErr: false,
+      isComplete: false
     }
   }
 
@@ -97,7 +98,7 @@ class Form extends Component {
         </div>
 
         <Link to='/movies' onClick={this.handleSubmit}>
-          <button type="button"> May the dark force Be With You</button>
+          <button type="button" onClick={this.handleChange}> May the dark force Be With You</button>
         </Link>
 
       </form>
