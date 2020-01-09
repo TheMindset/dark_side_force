@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Form.scss'
 import PropTypes from 'prop-types'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Form extends Component {
   constructor(getFormData) {
@@ -107,3 +107,7 @@ class Form extends Component {
 }
 
 export default Form
+
+Form.propTypes = {
+  getFormData: PropTypes.func.isRequired
+}
