@@ -30,13 +30,14 @@ class App extends Component {
   }
 
   render() {
-    const { movies, userInfos } = this.state
+    const { movies, userInfos, characters } = this.state
     return (
       <main className='App'>
         <div>
         { <Nav user={userInfos}/> }
           <Route exact path='/' render={() => <Form getFormData={this.getFormData}/>} />  
-          <Route exact path='/movies' render={() => <Container movies={movies}/>} />
+          <Route exact path='/movies' render={() => <Container cards={movies}/>} />
+          <Route exact path='/movies/:id' render={() => <Container cards={characters}/>} />
         </div>
       </main>
     )
