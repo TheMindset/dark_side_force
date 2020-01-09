@@ -1,19 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import MovieCard from '../MovieCard/MovieCard'
+import CharacterCard from '../CharacterCard/CharacterCard'
 
-const Container = ({ movies }) => {
-  const allMovies = movies.map(movie => {
-    return <MovieCard key={movie.episode} movie={movie} />
+const Container = ({ cards }) => {
+  const allCards = cards.map(card => {
+    if (card.title) {
+      return <MovieCard key={card.episode} movie={card} />
+    }
+      return <CharacterCard key={card.name} character={card}/>
   })
 
   return (
-    <section> {allMovies} </section>
+    <section> {allCards} </section>
   )
 }
 
 export default Container
 
 Container.propTypes = {
-  movies: PropTypes.array.isRequired
+  cards: PropTypes.array.isRequired
 }
