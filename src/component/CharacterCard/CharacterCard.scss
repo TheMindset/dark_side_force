@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+.character-card {
+  background-color: #04243d;
+  border-radius: 20px;
+  border: 8px, ridge, white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 21px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+  padding: 1.5rem;
+  text-align: center;
+}
