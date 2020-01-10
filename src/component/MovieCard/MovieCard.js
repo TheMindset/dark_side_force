@@ -1,14 +1,16 @@
 import React from 'react'
+import './MovieCard.scss'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 const MovieCard = ({ movie }) => {
+  const { title, episode, releaseYear, id } = movie
   return (
-    <div className='movie-card'>
-      <h2> {movie.title} </h2>
-      <h3> {movie.episode} </h3>
-      <h3> {movie.releaseYear} </h3>
-      <Link to={`movies/${movie.id}`}>
+    <div className="movie-card">
+      <h2> {title} </h2>
+      <h3> Episode: {episode} </h3>
+      <h3> Released in {releaseYear} </h3>
+      <Link to={`movies/${id}`}>
         <button>Explore Characters</button>
       </Link>
     </div>
