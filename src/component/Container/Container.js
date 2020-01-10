@@ -1,4 +1,5 @@
 import React from 'react'
+import './Container.scss'
 import PropTypes from 'prop-types'
 import MovieCard from '../MovieCard/MovieCard'
 import CharacterCard from '../CharacterCard/CharacterCard'
@@ -12,7 +13,7 @@ const Container = ({ cards }) => {
   })
 
   return (
-    <section> {allCards} </section>
+    <section className="container"> {allCards} </section>
   )
 }
 
