@@ -3,15 +3,15 @@ import './MovieCard.scss'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, reachMovieCharacters }) => {
   const { title, episode, releaseYear, id } = movie
   return (
     <div className="movie-card">
       <h2> {title} </h2>
       <h3> Episode: {episode} </h3>
       <h3> Released in {releaseYear} </h3>
-      <Link to={`movies/${id}`}>
-        <button>Explore Characters</button>
+      <Link onClick={reachMovieCharacters} to={`/movies/${id}`}>
+        <button id={id}>Explore Characters</button>
       </Link>
     </div>
   )
@@ -20,5 +20,6 @@ const MovieCard = ({ movie }) => {
 export default MovieCard
 
 MovieCard.propTypes = {
-  movie: PropTypes.object.isRequired
+  movie: PropTypes.object.isRequired,
+  reachMovieCharacters: PropTypes.func.isRequired
 }

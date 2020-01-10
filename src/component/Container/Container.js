@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import MovieCard from '../MovieCard/MovieCard'
 import CharacterCard from '../CharacterCard/CharacterCard'
 
-const Container = ({ cards }) => {
+const Container = ({ cards, reachMovieCharacters }) => {
   const allCards = cards.map(card => {
     if (card.title) {
-      return <MovieCard key={card.episode} movie={card} />
+      return <MovieCard key={card.episode} movie={card} reachMovieCharacters={reachMovieCharacters}/>
     }
       return <CharacterCard key={card.name} character={card}/>
   })
@@ -20,5 +20,6 @@ const Container = ({ cards }) => {
 export default Container
 
 Container.propTypes = {
-  cards: PropTypes.array.isRequired
+  cards: PropTypes.array.isRequired,
+  reachMovieCharacters: PropTypes.func.isRequired
 }
