@@ -58,50 +58,51 @@ class Form extends Component {
     let rankClass = rankErr ? 'error': ''
 
     return (
-      <form>
-        <input 
-          autoFocus 
-          value={name} 
-          name="name" 
-          placeholder="Enter a name"
-          className={nameClass}
-          onChange={this.handleChange}
-        />
-        <div>
-          {nameErr && <p>No Name</p>}
-        </div>
+      <div className="login-page">
+        <form className="form-background">
+          <input 
+            autoFocus 
+            value={name} 
+            name="name" 
+            placeholder="Enter a name"
+            className={nameClass}
+            onChange={this.handleChange}
+          />
+          <div>
+            {nameErr && <p>No Name</p>}
+          </div>
 
-        <input 
-          autoFocus 
-          value={quote} 
-          name="quote" 
-          placeholder="Enter your favorite quote"
-          className={quoteClass}
-          onChange={this.handleChange}
-        />
-        <div>
-          {quoteErr && <p>No Quote</p>}
-        </div>
+          <input 
+            autoFocus 
+            value={quote} 
+            name="quote" 
+            placeholder="Enter your favorite quote"
+            className={quoteClass}
+            onChange={this.handleChange}
+          />
+          <div>
+            {quoteErr && <p>No Quote</p>}
+          </div>
 
-        <select 
-          value={rank} 
-          name="rank" 
-          className={rankClass}
-          onChange={this.handleChange}
-        >
-          <option value="Padawan">Padawan</option>
-          <option value="Jedi Knight">Jedi Knight</option>
-          <option value="Jedi Master">Jedi Mastern</option>
-        </select>
-        <div>
-          {rankErr && <p>No Rank</p>}
-        </div>
+          <select 
+            value={rank} 
+            name="rank" 
+            className={rankClass}
+            onChange={this.handleChange}
+          >
+            <option value="Padawan">Padawan</option>
+            <option value="Jedi Knight">Jedi Knight</option>
+            <option value="Jedi Master">Jedi Mastern</option>
+          </select>
+          <div>
+            {rankErr && <p>No Rank</p>}
+          </div>
 
-        <Link to='/movies' onClick={this.handleSubmit}>
-          <button type="button" onClick={this.handleChange}> May the dark force Be With You</button>
-        </Link>
-
-      </form>
+          <Link to='/movies' onClick={this.handleSubmit}>
+            <button type="button" className="login-btn" onClick={this.handleChange}> May the dark force Be With You</button>
+          </Link>
+        </form>
+      </div>
     )
   }
 }

@@ -4,47 +4,68 @@
   padding: 0;
 }
 
+.login-page {
+  background-attachment: fixed;
+  background-image: url('../Images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120vh;
+}
+
+h1 {
+  padding: 35px 0 0 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.logo {
+  align-self: center;
+  width: 400px;
+  height: 200px;
+}
+
 form {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  margin: 0 0 0 30%;
+  width: 40%;
+}
 
-  input {
-    border-radius: 5px;
-    font-size: 20px;
-  }
+input {
+  border-radius: 5px;
+  border: 3px solid #000;
+  font-size: 20px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+}
 
-  ::placeholder {
-    color: #141d4F;
-  }
+::placeholder {
+  color: #141d4f;
+}
 
-  select {
-    height: 6%;
-    margin: 10px;
-    width: 20%;
-  }
+.login-btn,
+select {
+  border-radius: 5px;
+  border: 3px solid #000;
+  color: #141d4f;
+  cursor: pointer;
+  font-size: 20px;
+  height: 50px;
+  margin: 10px;
+}
 
-  div {
-    min-height: 40px;
-    p {
-      display: inline;
-    }
-  }
-
-  button {
-    margin-top: 10px;
-    &:hover {
-      outline: 3px solid black;
-    }
-  }
-
-  .error {
-    align-self: center;
-    background-color: #1b3c6c;
-    border-radius: 5px;
-    color: red;
-    font-size: 25px;
-  }
+.error {
+  align-self: center;
+  background-color: #1B3C6C;
+  border-radius: 5px;
+  border: 1px solid #000;
+  color: red;
+  font-size: 25px;
+  opacity: .9;
+  text-align: center;
+  width: 95%;
 }
