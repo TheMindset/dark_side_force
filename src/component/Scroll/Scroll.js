@@ -6,7 +6,7 @@ import './Scroll.scss'
 const Scroll = ({ selectedMovie }) => {
   const { title, scrollText, episode } = selectedMovie
   return (
-    <>
+    <div className='scroll'>
       <div className="fade">
           <section className="star-wars">
             <div className="crawl">
@@ -18,7 +18,7 @@ const Scroll = ({ selectedMovie }) => {
             </div>
           </section>
       </div>
-    </>
+    </div>
   )
 }
 

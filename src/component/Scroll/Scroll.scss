@@ -1,14 +1,11 @@
 .scroll {
+  background: url(../Images/star-background.jpg);
   height: 100%;
   overflow: hidden;
   width: 100%;
 }
 
 .fade {
-  background-attachment: fixed;
-  background-image: url(../Images/star-background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
   width: 100%;
   min-height: 60vh;
