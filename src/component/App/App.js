@@ -58,12 +58,16 @@ class App extends Component {
     this.setState({ userInfos: userInfos, isFormComplete: true })
   }
 
+  logOut = () => {
+    this.setState({ isFormComplete: false, userInfos: {} })
+  }
+
   render() {
-    const { movies, userInfos, characters, isFormComplete, characherLoad, selectedMovie, favorites, movieLoad } = this.state
+    const { movies, userInfos, characters, isFormComplete, characherLoad, selectedMovie, favorites, movieLoad , logOut} = this.state
     return (
       <main className='App'>
         <div>
-          { isFormComplete && <Nav user={userInfos} /> }
+          { isFormComplete && <Nav user={userInfos} logOut={logOut} /> }
 
           <Route exact path='/' render={() => <Form getFormData={this.getFormData}/>} />  
           <Route exact path='/movies' render={() => <Container cards={movies} reachMovieCharacters={this.reachMovieCharacters} />} />

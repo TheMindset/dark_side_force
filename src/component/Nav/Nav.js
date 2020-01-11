@@ -3,7 +3,7 @@ import './Nav.scss'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
-const Nav = ({ user }) => {
+const Nav = ({ user, logOut }) => {
   const { name, quote, rank } = user
   return (
     <nav>
@@ -15,7 +15,7 @@ const Nav = ({ user }) => {
 
       <NavLink to='/movies' className='nav-link'>Movies</NavLink>
       <NavLink to='/'>
-        <button>LogOut</button>
+        <button onClick={logOut}>LogOut</button>
       </NavLink>
     </nav>
   )
@@ -24,5 +24,6 @@ const Nav = ({ user }) => {
 export default Nav
 
 Nav.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  logOut: PropTypes.func.isRequired
 }
