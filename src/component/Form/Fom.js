@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Form.scss'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class Form extends Component {
   constructor(getFormData) {
@@ -51,6 +51,9 @@ class Form extends Component {
 
 
   render() {
+    if (this.state.isComplete) {
+      return <Redirect to='/movies'/>
+    }
     const {name, quote, rank, nameErr, quoteErr, rankErr} = this.state
 
     let nameClass = nameErr ? 'error' : ''
