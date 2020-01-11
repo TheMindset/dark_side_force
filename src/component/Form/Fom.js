@@ -13,7 +13,6 @@ class Form extends Component {
       rank: 'Padawan',
       nameErr: '',
       quoteErr: '',
-      rankErr: false,
       isComplete: false
     }
   }
@@ -54,11 +53,10 @@ class Form extends Component {
     if (this.state.isComplete) {
       return <Redirect to='/movies'/>
     }
-    const {name, quote, rank, nameErr, quoteErr, rankErr} = this.state
+    const { name, quote, rank, nameErr, quoteErr } = this.state
 
     let nameClass = nameErr ? 'error' : ''
     let quoteClass = quoteErr ? 'error': ''
-    let rankClass = rankErr ? 'error': ''
 
     return (
       <div className="login-page">
@@ -89,16 +87,12 @@ class Form extends Component {
           <select 
             value={rank} 
             name="rank" 
-            className={rankClass}
             onChange={this.handleChange}
           >
             <option value="Padawan">Padawan</option>
             <option value="Jedi Knight">Jedi Knight</option>
             <option value="Jedi Master">Jedi Mastern</option>
           </select>
-          <div>
-            {rankErr && <p>No Rank</p>}
-          </div>
 
           <Link to='/movies' onClick={this.handleSubmit}>
             <button type="button" className="login-btn" onClick={this.handleChange}> May the dark force Be With You</button>
