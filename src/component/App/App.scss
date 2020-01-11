@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
-
 * {
   box-sizing: border-box;
   font-family: 'Merriweather', monospace;
   margin: 0;
   padding: 0;
+}
+
+.loading-img {
+  background: url(../Images/loadingImage.gif); 
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  height:100vh;
+  width:100vw;
 }
