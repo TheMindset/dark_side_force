@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       characters: [],
       selectedMovie: {},
-      characherLoad: false,
+      characherLoad: true,
       movies: [],
       movieLoad: false,
       userInfos: {},
@@ -51,7 +51,7 @@ class App extends Component {
       characters: []
     })
     getCharacters(id)
-    .then(data => this.setState({ characters: data, characherLoad: true }))
+    .then(data => this.setState({ characters: data, characherLoad: false }))
   }
 
   getFormData = (userInfos) => {
@@ -59,7 +59,7 @@ class App extends Component {
   }
 
   render() {
-    const { movies, userInfos, characters, isFormComplete, characherLoad, selectedMovie, favorites } = this.state
+    const { movies, userInfos, characters, isFormComplete, characherLoad, selectedMovie, favorites, movieLoad } = this.state
     return (
       <main className='App'>
         <div>
@@ -68,8 +68,8 @@ class App extends Component {
           <Route exact path='/' render={() => <Form getFormData={this.getFormData}/>} />  
           <Route exact path='/movies' render={() => <Container cards={movies} reachMovieCharacters={this.reachMovieCharacters} />} />
           { characherLoad && <Route exact path='/movies/:id' render={() => <Container type ='characters' cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites}/>} /> }
-          { !characherLoad && <Scroll selectedMovie={selectedMovie}/> }
           <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite}/> }/>
+          { movieLoad && !characherLoad && <Scroll selectedMovie={selectedMovie}/> }
         </div>
       </main>
     )
