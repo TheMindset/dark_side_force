@@ -76,7 +76,6 @@ class Form extends Component {
           </div>
 
           <input 
-            autoFocus 
             value={quote} 
             name="quote" 
             placeholder="Enter your favorite quote"
