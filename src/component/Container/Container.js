@@ -5,7 +5,6 @@ import MovieCard from '../MovieCard/MovieCard'
 import CharacterCard from '../CharacterCard/CharacterCard'
 
 const Container = ({ cards, reachMovieCharacters, toggleFavorite, type, favorites }) => {
-  console.log(favorites)
     if (type === 'favorites' && favorites.length === 0) {
       return (
         <div className="empty-favorites">

@@ -51,7 +51,7 @@ class App extends Component {
       characters: []
     })
     getCharacters(id)
-    .then(data => this.setState({ characters: data, characherLoad: false }))
+    .then(data => this.setState({ characters: data, characherLoad: true }))
   }
 
   getFormData = (userInfos) => {
