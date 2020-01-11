@@ -26,6 +26,16 @@ class App extends Component {
   componentDidMount() {
     getFilms()
     .then(data => this.setState({ movies: data, movieLoad: true }))
+
+    if (localStorage.getItem('favorites')) {
+      const storedFavorites = JSON.parse(localStorage.getItem('favorites'))
+      this.setState({ favorites: storedFavorites })
+    }
+
+    if (localStorage.getItem('userInfos')) {
+      const storedUser = JSON.parse(localStorage.getItem('userInfos'))
+      this.setState({ userInfos: storedUser, isFormComplete: true })
+    }
   }
 
   toggleFavorite = (character) => {
@@ -34,12 +44,15 @@ class App extends Component {
   }
 
   addFavorite = (character) => {
-    this.setState({ favorites: [...this.state.favorites, character] })
+    const newFavorites = [...this.state.favorites, character]
+    this.setState({ favorites: newFavorites })
+    localStorage.setItem('favorites', JSON.stringify(newFavorites) )
   }
 
   removeFavorite = (character) => {
     let newFavorites = this.state.favorites.filter(favorite => favorite.name !== character.name)
     this.setState({ favorites: newFavorites })
+    localStorage.setItem('favorites', JSON.stringify(newFavorites) )
   }
 
   reachMovieCharacters = (event) => {
@@ -56,9 +69,11 @@ class App extends Component {
 
   getFormData = (userInfos) => {
     this.setState({ userInfos: userInfos, isFormComplete: true })
+    localStorage.setItem('userInfos', JSON.stringify(userInfos))
   }
 
   logOut = () => {
+    localStorage.clear()
     this.setState({ isFormComplete: false, userInfos: {} })
   }
 
