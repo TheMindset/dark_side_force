@@ -4,20 +4,87 @@
 }
 
 nav {
-  background-color: black;
-  border: 1px solid black;
-  display: flex;
   align-items: center;
+  background-color:  black;
+  display: flex;
+  height: 75px;
   justify-content: space-between;
+  
+  a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #ABABAB;
 
+    &:hover {
+      cursor: pointer;
+      color: #1B3C6C;
+    }
+
+    a:active {
+      color: #1B3C6C;
+    }
+  }
+
+  button {
+    background-color: #ABABAB;
+    border-radius: 5px;
+    color: #1B3C6C;
+    font-size: 20px;
+    height: 40px;
+    margin-right: 20px;
+    width: 125px;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
-button {
-  
-  background: #ababab;
+.inner {
+  background: black;
   border-radius: 10px;
-  border: none;
+  clip-path: circle(7% at 10% 30%);
+  cursor: pointer;
+  margin-top: 10px;
+  margin-top: 50px;
+  padding: 1em;
+  transition: all .5s ease-in-out;
+  width: 500px;
+
   &:hover {
-    cursor: pointer;
+    background: #ABABAB;
+    clip-path: circle(75%);
   }
+
+  h1 {
+    color: white;
+    margin: 0;
+  }
+
+  p {
+    color: #1B3C6C;
+    font-size: 1.15rem;
+    margin-left: 25%;
+  }
+
+  span {
+    float: left;
+    color: #ABABAB;
+    float: left;
+    font-weight: bold;
+    height: 10px;
+    margin-left: 29px;
+    margin-top: 5px;
+    position: relative;
+    transition: color .5s;
+    width: 10px;
+  }
+
+  &:hover span {
+    color: #1B3C6C;
+  }
+}
+
+nav-link {
+
 }

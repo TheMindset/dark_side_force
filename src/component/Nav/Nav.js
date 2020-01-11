@@ -8,13 +8,16 @@ const Nav = ({ user, logOut }) => {
   return (
     <nav>
       <div className='user-profile'>
-        <h1> {name} </h1>
-        <p> "{quote}" </p>
-        <h2> {rank} </h2>
+        <div className='inner'>
+          <span>i</span>
+          <p>Name: {name} </p>
+          <p>Quote: "{quote}" </p>
+          <p>Rank :{rank} </p>
+        </div>
       </div>
-
       <NavLink to='/movies' className='nav-link'>Movies</NavLink>
-      <NavLink to='/'>
+      <NavLink to='/favorites' className='nav-link'>Favorites</NavLink>
+      <NavLink to='/' className='nav-link'>
         <button onClick={logOut}>LogOut</button>
       </NavLink>
     </nav>
