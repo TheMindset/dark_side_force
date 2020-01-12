@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 
 import { getFilms, getCharacters } from '../api/apiCalls'
 import Container from '../Container/Container'
-import Form from '../Form/Fom';
+import Form from '../Form/Form';
 import Nav from '../Nav/Nav'
 import Scroll from '../Scroll/Scroll'
 
