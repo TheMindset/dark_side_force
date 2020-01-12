@@ -21,4 +21,20 @@ describe('Form', () => {
     wrapper.instance().handleChange(mockEvent)
     expect(wrapper.state('name')).toEqual(expected)
   })
+
+  test('should call getFormData when Submit is clicked', () => {
+    const prevDefaultEvent = { preventDefault: jest.fn() }
+
+    wrapper.setState({
+      name: 'Hola',
+      quote: 'I am the best',
+      rank: 'Padawan'
+    })
+
+    wrapper.find('button').simulate('click', prevDefaultEvent)
+
+    expect(mockGetFormData).toHaveBeenCalled()
+  })
+  
+  
 })

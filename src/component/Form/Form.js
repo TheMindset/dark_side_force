@@ -94,9 +94,7 @@ class Form extends Component {
             <option value="Jedi Master">Jedi Mastern</option>
           </select>
 
-          <Link to='/movies' onClick={this.handleSubmit}>
-            <button type="button" className="login-btn" onClick={this.handleChange}> May the dark force Be With You</button>
-          </Link>
+            <button type="button" className="login-btn" onClick={this.handleSubmit}> May the dark force Be With You</button>
         </form>
       </div>
     )
