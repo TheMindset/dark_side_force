@@ -1,7 +1,7 @@
 import React from 'react'
 import './Nav.scss'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Nav = ({ user, logOut, numFav}) => {
   const { name, quote, rank } = user
@@ -17,9 +17,9 @@ const Nav = ({ user, logOut, numFav}) => {
       </div>
       <NavLink to='/movies' className='nav-link'>Movies</NavLink>
       <NavLink to='/favorites' className='nav-link'>Favorites ({numFav})</NavLink>
-      <NavLink to='/' className='nav-link'>
-        <button onClick={logOut}>LogOut</button>
-      </NavLink>
+      <Link onClick={logOut} to='/' className='nav-link'>
+        <button >LogOut</button>
+      </Link>
     </nav>
   )
 }

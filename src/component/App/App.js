@@ -80,17 +80,17 @@ class App extends Component {
   }
 
   render() {
-    const { movies, userInfos, characters, isFormComplete, characherLoad, selectedMovie, favorites, movieLoad , logOut, error} = this.state
+    const { movies, userInfos, characters, isFormComplete, characherLoad, selectedMovie, favorites, movieLoad, error} = this.state
     return (
       <main className='App'>
         <div>
           <Route exact path='/' render={() => <Form getFormData={this.getFormData}/>} />  
-          { isFormComplete && <Nav user={userInfos} logOut={logOut} numFav={favorites.length}/> }
+          { isFormComplete && <Nav user={userInfos} logOut={this.logOut} numFav={favorites.length}/> }
           { error && <div className='loading-img'></div> }
           <Route exact path='/movies' render={() => <Container cards={movies} reachMovieCharacters={this.reachMovieCharacters} />} />
           { characherLoad && <Route exact path='/movies/:id' render={() => <Container type ='characters' cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites}/>} /> }
           <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite}/> }/>
-          { movieLoad && !characherLoad && <Scroll selectedMovie={selectedMovie}/> }
+          { movieLoad && !characherLoad && <Scroll selectedMovie={selectedMovie}p/> }
         </div>
       </main>
     )
