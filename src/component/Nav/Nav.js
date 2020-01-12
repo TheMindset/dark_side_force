@@ -3,7 +3,7 @@ import './Nav.scss'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
-const Nav = ({ user, logOut }) => {
+const Nav = ({ user, logOut, numFav}) => {
   const { name, quote, rank } = user
   return (
     <nav>
@@ -16,7 +16,7 @@ const Nav = ({ user, logOut }) => {
         </div>
       </div>
       <NavLink to='/movies' className='nav-link'>Movies</NavLink>
-      <NavLink to='/favorites' className='nav-link'>Favorites</NavLink>
+      <NavLink to='/favorites' className='nav-link'>Favorites ({numFav})</NavLink>
       <NavLink to='/' className='nav-link'>
         <button onClick={logOut}>LogOut</button>
       </NavLink>
@@ -28,5 +28,6 @@ export default Nav
 
 Nav.propTypes = {
   user: PropTypes.object.isRequired,
-  logOut: PropTypes.func.isRequired
+  logOut: PropTypes.func.isRequired,
+  numFav: PropTypes.number.isRequired
 }
