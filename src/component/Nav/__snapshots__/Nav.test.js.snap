@@ -1,3 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Nav should match the snapshot 1`] = `
+<nav>
+  <div
+    className="user-profile"
+  >
+    <div
+      className="inner"
+    >
+      <span>
+        i
+      </span>
+      <p>
+        Name: 
+        Hola
+         
+      </p>
+      <p>
+        Quote: "
+        The force of your mind
+        " 
+      </p>
+      <p>
+        Rank :
+        Padawan
+         
+      </p>
+    </div>
+  </div>
+  <NavLink
+    className="nav-link"
+    to="/movies"
+  >
+    Movies
+  </NavLink>
+  <NavLink
+    className="nav-link"
+    to="/favorites"
+  >
+    Favorites (
+    3
+    )
+  </NavLink>
+  <Link
+    className="nav-link"
+    onClick={[MockFunction]}
+    to="/"
+  >
+    <button>
+      LogOut
+    </button>
+  </Link>
+</nav>
+`;

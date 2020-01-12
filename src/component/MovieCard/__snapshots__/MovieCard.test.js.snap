@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieCard should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`MovieCard should match the snapshot 1`] = `
+<div
+  className="movie-card"
+>
+  <h2>
+     
+    The GodFather
+     
+  </h2>
+  <h3>
+     Episode: 
+    1
+     
+  </h3>
+  <h3>
+     Released in 
+    1972
+     
+  </h3>
+  <Link
+    onClick={[MockFunction]}
+    to="movies/2"
+  >
+    <button
+      id={2}
+    >
+      Explore Characters
+    </button>
+  </Link>
+</div>
+`;

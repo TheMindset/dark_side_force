@@ -1,3 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Form should match the snapshot 1`] = `
+<div
+  className="login-page"
+>
+  <form
+    className="form-background"
+  >
+    <input
+      autoFocus={true}
+      className=""
+      name="name"
+      onChange={[Function]}
+      placeholder="Enter a name"
+      value=""
+    />
+    <div />
+    <input
+      className=""
+      name="quote"
+      onChange={[Function]}
+      placeholder="Enter your favorite quote"
+      value=""
+    />
+    <div />
+    <select
+      name="rank"
+      onChange={[Function]}
+      value="Padawan"
+    >
+      <option
+        value="Padawan"
+      >
+        Padawan
+      </option>
+      <option
+        value="Jedi Knight"
+      >
+        Jedi Knight
+      </option>
+      <option
+        value="Jedi Master"
+      >
+        Jedi Mastern
+      </option>
+    </select>
+    <button
+      className="login-btn"
+      onClick={[Function]}
+      type="button"
+    >
+       May the dark force Be With You
+    </button>
+  </form>
+</div>
+`;
