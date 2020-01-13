@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterCard should math snapshot 1`] = `
+<div
+  className="character-card"
+>
+  <h2>
+    Luke Skywalker
+  </h2>
+  <h3>
+    Homeworld: 
+    Tattooine
+  </h3>
+  <h3>
+    Population: 
+    200000
+     
+  </h3>
+  <h3>
+    Species: 
+    Human
+     
+  </h3>
+  <ul>
+    Films: 
+    <li
+      key="Terrible"
+    >
+       
+      Terrible
+       
+    </li>
+    <li
+      key="Incroyable"
+    >
+       
+      Incroyable
+       
+    </li>
+  </ul>
+  <button
+    id="Luke Skywalker"
+    onClick={[Function]}
+  >
+    Remove Favorite
+  </button>
+</div>
+`;
