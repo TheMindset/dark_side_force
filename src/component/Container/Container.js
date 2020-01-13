@@ -32,5 +32,8 @@ export default Container
 
 Container.propTypes = {
   cards: PropTypes.array.isRequired,
-  reachMovieCharacters: PropTypes.func.isRequired
+  reachMovieCharacters: PropTypes.func,
+  toggleFavorite: PropTypes.func,
+  type: PropTypes.string,
+  favorites: PropTypes.array
 }

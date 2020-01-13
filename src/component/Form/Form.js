@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Form.scss'
 import PropTypes from 'prop-types'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class Form extends Component {
   constructor(getFormData) {
