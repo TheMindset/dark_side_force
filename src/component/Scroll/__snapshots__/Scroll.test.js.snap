@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scroll should match the snapshot 1`] = `
+<div
+  className="scroll"
+>
+  <div
+    className="fade"
+  >
+    <section
+      className="star-wars"
+    >
+      <div
+        className="crawl"
+      >
+        <div
+          className="title"
+        >
+          <p>
+            Episode 
+            2
+          </p>
+          <h1>
+            The GodFather
+          </h1>
+        </div>
+        <p>
+          Hé bambino...
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+`;
