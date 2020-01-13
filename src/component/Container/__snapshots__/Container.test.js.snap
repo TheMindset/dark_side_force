@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container whithout favorites should  1`] = `
+<div
+  className="empty-favorites"
+>
+  <h3>
+    Add some Favorites
+  </h3>
+</div>
+`;
+
+exports[`Container with characters should  1`] = `
+<section
+  className="container"
+>
+   
+  <CharacterCard
+    character={
+      Object {
+        "films": Array [
+          "All Avengers",
+          "It's crazy",
+        ],
+        "homeworld": "Terre",
+        "name": "Captain America",
+        "population": 200000000,
+        "species": "Human",
+      }
+    }
+    key="Captain America"
+    toggleFavorite={[MockFunction]}
+  />
+  <CharacterCard
+    character={
+      Object {
+        "films": Array [
+          "All Avengers",
+          "So crazy man!!",
+        ],
+        "homeworld": "Asgard",
+        "name": "Thor",
+        "population": 20,
+        "species": "Asgardian",
+      }
+    }
+    key="Thor"
+    toggleFavorite={[MockFunction]}
+  />
+   
+</section>
+`;
+
+exports[`Container with favorites should  1`] = `
+<section
+  className="container"
+>
+   
+  <CharacterCard
+    character={
+      Object {
+        "films": Array [
+          "Terrible",
+          "Incroyable",
+        ],
+        "homeworld": "Tattooine",
+        "name": "Luke Skywalker",
+        "population": 200000,
+        "species": "Human",
+      }
+    }
+    favorites={
+      Array [
+        Object {
+          "films": Array [
+            "Terrible",
+            "Incroyable",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke Skywalker",
+          "population": 200000,
+          "species": "Human",
+        },
+        Object {
+          "films": Array [
+            "All of them",
+            "Terrible",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke C3-PO",
+          "population": 200000,
+          "species": "Droid",
+        },
+      ]
+    }
+    key="Luke Skywalker"
+    toggleFavorite={[MockFunction]}
+  />
+  <CharacterCard
+    character={
+      Object {
+        "films": Array [
+          "All of them",
+          "Terrible",
+        ],
+        "homeworld": "Tattooine",
+        "name": "Luke C3-PO",
+        "population": 200000,
+        "species": "Droid",
+      }
+    }
+    favorites={
+      Array [
+        Object {
+          "films": Array [
+            "Terrible",
+            "Incroyable",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke Skywalker",
+          "population": 200000,
+          "species": "Human",
+        },
+        Object {
+          "films": Array [
+            "All of them",
+            "Terrible",
+          ],
+          "homeworld": "Tattooine",
+          "name": "Luke C3-PO",
+          "population": 200000,
+          "species": "Droid",
+        },
+      ]
+    }
+    key="Luke C3-PO"
+    toggleFavorite={[MockFunction]}
+  />
+   
+</section>
+`;
+
+exports[`Container with movies should  1`] = `
+<section
+  className="container"
+>
+   
+  <MovieCard
+    key="1"
+    movie={
+      Object {
+        "episode": 1,
+        "id": 1,
+        "releaseYear": 2012,
+        "title": "The Avengers",
+      }
+    }
+  />
+  <MovieCard
+    key="2"
+    movie={
+      Object {
+        "episode": 2,
+        "id": 2,
+        "releaseYear": 2015,
+        "title": "Avengers: Age of Ultron",
+      }
+    }
+  />
+   
+</section>
+`;
