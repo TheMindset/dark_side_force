@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.scss'
 import { Route } from 'react-router-dom'
 
-import { getFilms, getCharacters } from '../api/apiCalls'
+import { getFilms, getCharacters } from '../../Util/api/apiCalls'
 import Container from '../Container/Container'
 import Form from '../Form/Form';
 import Nav from '../Nav/Nav'
