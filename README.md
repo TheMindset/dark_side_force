@@ -19,7 +19,7 @@ This project is built in React. I utilized the Star Wars API for displaying seve
 ![](public/screenshot/character_component.png)
 
 
-###Set Up
+### Set Up
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
