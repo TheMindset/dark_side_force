@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       characters: [],
       selectedMovie: {},
-      characherLoad: true,
+      characterLoad: true,
       movies: [],
       movieLoad: false,
       userInfos: {},
@@ -62,11 +62,11 @@ class App extends Component {
     let targetMovie = this.state.movies[id - 1]
     this.setState({ 
       selectedMovie: targetMovie, 
-      characherLoad: false,
+      characterLoad: false,
       characters: []
     })
     getCharacters(id)
-    .then(data => this.setState({ characters: data, characherLoad: true }))
+    .then(data => this.setState({ characters: data, characterLoad: true }))
   }
 
   getFormData = (userInfos) => {
@@ -80,7 +80,7 @@ class App extends Component {
   }
 
   render() {
-    const { movies, userInfos, characters, isFormComplete, characherLoad, selectedMovie, favorites, movieLoad, error} = this.state
+    const { movies, userInfos, characters, isFormComplete, characterLoad, selectedMovie, favorites, movieLoad, error} = this.state
     return (
       <main className='App'>
         <div>
@@ -88,9 +88,9 @@ class App extends Component {
           { isFormComplete && <Nav user={userInfos} logOut={this.logOut} numFav={favorites.length}/> }
           { error && <div className='loading-img'></div> }
           <Route exact path='/movies' render={() => <Container cards={movies} reachMovieCharacters={this.reachMovieCharacters} />} />
-          { characherLoad && <Route exact path='/movies/:id' render={() => <Container type ='characters' cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites}/>} /> }
+          { characterLoad && <Route exact path='/movies/:id' render={() => <Container type ='characters' cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites}/>} /> }
           <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite}/> }/>
-          { movieLoad && !characherLoad && <Scroll selectedMovie={selectedMovie}p/> }
+          { movieLoad && !characterLoad && <Scroll selectedMovie={selectedMovie}p/> }
         </div>
       </main>
     )
