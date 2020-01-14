@@ -135,6 +135,39 @@ describe('App', () => {
     expect(wrapper.state('userInfos')).toEqual({})
     expect(wrapper.state('isFormComplete')).toEqual(false)
   })
-  
-  
+})
+
+describe('App with nav', () => {
+  test('should render Nav if the form is completed', () => {
+    const wrapper = shallow(<App 
+      isFormComplete={true}
+      moviesLoad={true}
+    />)
+
+    expect(wrapper).toMatchSnapshot()
+  })
+})
+
+describe('App with no movies', () => {
+  test('should render loading images if no movies present ', () => {
+    const wrapper = shallow(<App 
+      isFormComplete={true}
+      moviesLoad={false}
+    />)
+
+    expect(wrapper).toMatchSnapshot()
+  })
+})
+
+
+describe('App with no characters', () => {
+  test('should render Scroll if no characters is present', () => {
+    const wrapper = shallow(<App 
+      isFormComplete={true}
+      moviesLoad={true}
+      characterLoad={false}
+    />)
+
+    expect(wrapper).toMatchSnapshot()
+  })
 })

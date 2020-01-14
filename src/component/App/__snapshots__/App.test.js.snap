@@ -28,3 +28,90 @@ exports[`App should match the snapshot 1`] = `
   </div>
 </main>
 `;
+
+exports[`App with nav should render Nav if the form is completed 1`] = `
+<main
+  className="App"
+>
+  <div>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/movies"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/movies/:id"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/favorites"
+      render={[Function]}
+    />
+  </div>
+</main>
+`;
+
+exports[`App with no characters should render Scroll if no characters is present 1`] = `
+<main
+  className="App"
+>
+  <div>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/movies"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/movies/:id"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/favorites"
+      render={[Function]}
+    />
+  </div>
+</main>
+`;
+
+exports[`App with no movies should render loading images if no movies present  1`] = `
+<main
+  className="App"
+>
+  <div>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/movies"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/movies/:id"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/favorites"
+      render={[Function]}
+    />
+  </div>
+</main>
+`;
