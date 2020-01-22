@@ -65,7 +65,7 @@ class Form extends Component {
             autoFocus 
             value={name} 
             name="name" 
-            placeholder="Enter a name"
+            placeholder="Your name"
             className={nameClass}
             onChange={this.handleChange}
           />
@@ -76,7 +76,7 @@ class Form extends Component {
           <input 
             value={quote} 
             name="quote" 
-            placeholder="Enter your favorite quote"
+            placeholder="Your Favorite quote"
             className={quoteClass}
             onChange={this.handleChange}
           />

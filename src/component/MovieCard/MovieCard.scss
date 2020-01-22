@@ -9,9 +9,10 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 21px;
   justify-content: space-between;
   margin: 15px;
+  width: 250px;
+  height: 250px;
   padding: 1.5rem;
   text-align: center;
 }
@@ -22,7 +23,6 @@ button {
   color: #04243d;
   border: 2px solid white;
   display: inline-block;
-  font-size: 1.2rem;
   font-weight: bold;
   margin-top: 15px;
   padding: 0.4rem 1.3rem;
