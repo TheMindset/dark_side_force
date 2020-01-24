@@ -84,12 +84,12 @@ class App extends Component {
     return (
       <main className='App'>
         <div>
-          <Route exact path='/' render={() => <Form getFormData={this.getFormData}/>} />  
+          <Route exact path={process.env.PUBLIC_URL + '/'} render={() => <Form getFormData={this.getFormData}/>} />  
           { isFormComplete && <Nav user={userInfos} logOut={this.logOut} numFav={favorites.length}/> }
           { error && <div className='loading-img'></div> }
-          <Route exact path='/movies' render={() => <Container cards={movies} reachMovieCharacters={this.reachMovieCharacters} />} />
-          { characterLoad && <Route exact path='/movies/:id' render={() => <Container type ='characters' cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites}/>} /> }
-          <Route exact path='/favorites' render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite}/> }/>
+          <Route exact path={process.env.PUBLIC_URL +'/movies'} render={() => <Container cards={movies} reachMovieCharacters={this.reachMovieCharacters} />} />
+          { characterLoad && <Route exact path={process.env.PUBLIC_URL + '/movies/:id'} render={() => <Container type ='characters' cards={characters} toggleFavorite={this.toggleFavorite} favorites={favorites}/>} /> }
+          <Route exact path={process.env.PUBLIC_URL + '/favorites'} render={() => <Container type='favorites' cards={favorites} favorites={favorites} toggleFavorite={this.toggleFavorite}/> }/>
           { movieLoad && !characterLoad && <Scroll selectedMovie={selectedMovie}p/> }
         </div>
       </main>
