@@ -5,7 +5,7 @@ This project is built in React. I utilized the Star Wars API for displaying seve
 The deployed site can be viewed: **[here](https://dark-force-side.herokuapp.com/)**
 
 ## Techniques Stacks
-* React/Router
+* React / Router
 
 * CSS/Sass
 
